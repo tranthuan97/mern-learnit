@@ -2,8 +2,8 @@ POST  http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "vuasonha",
-  "password": "vuasonha1"
+  "username": "thuan",
+  "password": "thuan123"
 }
 
 
@@ -18,3 +18,38 @@ Content-Type: application/json
   "password": "vuasonha1"
 }
 
+###
+
+POST  http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjE1YjgzOTc5ZTAyYjM4NTAwOTc2OGEiLCJpYXQiOjE2NDU1OTA1ODV9.goJuazmdlKQ7Q_TfUW3t27ANn4VaxzFxHk6SguT5FM0
+
+{
+  "title": "Hoc React",
+  "description": "React kho qua",
+  "url": "react.com",
+  "status": "LEARNING"
+}
+
+###
+
+GET  http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjE1YjgzOTc5ZTAyYjM4NTAwOTc2OGEiLCJpYXQiOjE2NDU1OTA1ODV9.goJuazmdlKQ7Q_TfUW3t27ANn4VaxzFxHk6SguT5FM0
+
+###
+
+PUT  http://localhost:5000/api/posts/6215b9499b0cf0f2712ce4e2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjE1YjgzOTc5ZTAyYjM4NTAwOTc2OGEiLCJpYXQiOjE2NDU1OTA1ODV9.goJuazmdlKQ7Q_TfUW3t27ANn4VaxzFxHk6SguT5FM0
+
+{
+  "title": "Hoc React updated",
+  "description": "React khong kho",
+  "url": "react.com",
+  "status": ""
+}
+
+###
+
+Delete  http://localhost:5000/api/posts/6215b87c79e02b385009768c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjE1YjgzOTc5ZTAyYjM4NTAwOTc2OGEiLCJpYXQiOjE2NDU1OTA1ODV9.goJuazmdlKQ7Q_TfUW3t27ANn4VaxzFxHk6SguT5FM0

@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 
-const authRouter = require('./routes/auth')
+const authRouter = require('./routes/auth');
+const postRoter = require('./routes/post');
 
 const connectDB = async () => {
   try {
@@ -24,6 +25,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/api/auth', authRouter)
+app.use('/api/posts', postRoter)
 
 const PORT = 5000;
 
