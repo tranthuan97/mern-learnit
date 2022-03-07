@@ -3,8 +3,27 @@ const express = require('express');
 const router = express.Router();
 const argon2 = require('argon2');
 const jwt = require('jsonwebtoken');
+const verifyToken = require('../middleware/auth');
 
 const User = require('../models/User');
+
+// @route GET api/auth/
+// @desc GET user
+// @access Public
+router.get('/', verifyToken, async (req, res) => {
+  try {
+    // tìm bài viết theo người đăng
+    // populate lấy thông tin chi tiết người đã đăng
+    const user = await User.findById({ user: req.userId }).select('-password');
+    if (!user)
+      return res.status(400).json({ success: false, message: 'User not found.' });
+
+    res.json({ success: true, user })
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: 'Internal server error !' });
+  }
+})
 
 // @route POST api/auth/register
 // @desc Register user
