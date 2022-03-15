@@ -7,6 +7,7 @@ export function* userLoginRequest(params) {
     yield axios.post(`${apiUrl}/auth/login`, params.payload)
         .then(res => {
             if (res.data.success) {
+                // hot fix branch
                 message.success(res.data.message);
                 localStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, res.data.accessToken)
             }
