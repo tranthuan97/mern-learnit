@@ -4,7 +4,6 @@ import axios from "axios";
 import { apiUrl, LOCAL_STORAGE_TOKEN_NAME } from "utils/contants";
 
 export function* userLoginRequest(params) {
-    console.log("🚀 ~ file: authSaga.js ~ line 6 ~ function*loginRequest ~ params", params)
     yield axios.post(`${apiUrl}/auth/login`, params.payload)
         .then(res => {
             if (res.data.success) {
