@@ -8,7 +8,6 @@ export function* userLoginRequest(params) {
         .then(res => {
             if (res.data.success) {
                 // hot fix branch
-                // add file
                 message.success(res.data.message);
                 localStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, res.data.accessToken)
             }
